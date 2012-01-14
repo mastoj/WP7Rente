@@ -22,15 +22,31 @@ namespace Rente
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
-            this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
 
-        // Load data for the ViewModel Items
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private void MaxAmountChanged(object sender, TextChangedEventArgs e)
         {
-            if (!App.ViewModel.IsDataLoaded)
+            var textBox = sender as TextBox;
+            int value = 0;
+            var text = textBox.Text;
+            bool isParseable = int.TryParse(textBox.Text, out value);
+            if ((!isParseable && !string.IsNullOrEmpty(text)) || value > 1000000000 || value < 0)
             {
-                App.ViewModel.LoadData();
+                MessageBox.Show("Du må angi et beløp i hela kroner mellom 0 - 1000000000");
+                textBox.Text = textBox.Text.Substring(0, textBox.Text.Length - 1);
+            }
+        }
+
+        private void MaxInteresteRateChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = sender as TextBox;
+            double value = 0;
+            var text = textBox.Text;
+            bool isParseable = double.TryParse(textBox.Text, out value);
+            if ((!isParseable && !string.IsNullOrEmpty(text)) || value > 100 || value < 0)
+            {
+                MessageBox.Show("Prosent må være mellom 0 - 100");
+                textBox.Text = textBox.Text.Substring(0, textBox.Text.Length - 1);
             }
         }
     }
