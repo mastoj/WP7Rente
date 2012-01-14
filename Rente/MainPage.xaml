@@ -53,80 +53,85 @@
                 <RowDefinition Height="Auto"/>
         	</Grid.RowDefinitions>
         	<StackPanel x:Name="HeadingPanel" Margin="0,0,0,0" Grid.Row="0">
-        		<TextBlock TextWrapping="Wrap" Text="rentekalkylator" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Margin="12,0,0,0"/>
+        		<TextBlock TextWrapping="Wrap" Text="rentekalkulator" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Margin="12,0,0,0"/>
         	</StackPanel>
         	<StackPanel x:Name="AmountPanel" HorizontalAlignment="Left" Width="480" Margin="0" Grid.Row="1">
-        		<Grid Margin="0" Height="183" d:LayoutOverrides="Height" >
+        		<Grid Margin="0,24,0,0" Height="100" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.125*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
         				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="Auto"/>
-                    	<RowDefinition Height="Auto"/>
         				<RowDefinition/>
+        				<!--<RowDefinition Height="Auto"/>
+                    	<RowDefinition Height="Auto"/>
+        				<RowDefinition/>-->
         			</Grid.RowDefinitions>
-        			<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Margin="12,0,0,0"><TextBlock.Foreground>
+        			<!--<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Margin="12,0,0,0"><TextBlock.Foreground>
         					<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
         				</TextBlock.Foreground><Run Text="ma"/><Run Text="ks"/><Run Text=" lånebeløp"/><Run Text=":"/></TextBlock>
-        			<TextBox TextWrapping="Wrap" TextChanged="MaxAmountChanged" InputScope="Number" Text="{Binding MaxAmount, FallbackValue=10000, Mode=TwoWay}" d:LayoutOverrides="Height, GridBox" Grid.Row="1" Margin="12,0,12,1" />
-        			<Grid Margin="0,-1,0,1" Grid.Row="2">
+        			<TextBox TextWrapping="Wrap" TextChanged="MaxAmountChanged" InputScope="Number" Text="{Binding MaxAmount, FallbackValue=10000, Mode=TwoWay}" d:LayoutOverrides="Height, GridBox" Grid.Row="1" Margin="12,0,12,1" />-->
+        			<Grid Margin="0,-1,0,1" Grid.Row="0">
         				<Grid.ColumnDefinitions>
         					<ColumnDefinition/>
         				</Grid.ColumnDefinitions>
         				<StackPanel Margin="12,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-        					<TextBlock TextWrapping="Wrap" Text="valgt lånebeløp: " HorizontalAlignment="Left" VerticalAlignment="Top">
+        					<TextBlock TextWrapping="Wrap" Text="velg ønsket lånebeløp: " HorizontalAlignment="Left" VerticalAlignment="Top">
         						<TextBlock.Foreground>
         							<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
         						</TextBlock.Foreground>
         					</TextBlock>
         				</StackPanel>
-        				<StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" Grid.Column="1">
-        					<TextBlock TextWrapping="Wrap" Text="{Binding Amount}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,24,0" FontWeight="Bold">
+        				<StackPanel HorizontalAlignment="Right" Margin="0" Grid.Column="1">
+        					<TextBlock TextWrapping="Wrap" Text="{Binding Amount}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,24,0" FontSize="26.667" FontWeight="Bold">
         						<TextBlock.Foreground>
         							<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
         						</TextBlock.Foreground>
         					</TextBlock>
         				</StackPanel>
         			</Grid>
-        			<Slider d:LayoutOverrides="Height" Grid.Row="3" Margin="12,-1,12,-26" Maximum="{Binding MaxAmount}" SmallChange="10" LargeChange="100" Value="{Binding Amount, Mode=TwoWay}"/>
+        			<Slider d:LayoutOverrides="Height" Grid.Row="1" Margin="12,-1,12,-26" Maximum="10000000" SmallChange="10" LargeChange="100" Value="{Binding Amount, Mode=TwoWay}"/>
         		</Grid>
         	</StackPanel>
             <StackPanel x:Name="InterestPanel" HorizontalAlignment="Left" Width="480" Margin="0" Grid.Row="2">
-                <Grid Margin="0" Height="183" >
+                <Grid Margin="0,24,0,0" Height="100" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="60*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.144*"/>
-                        <RowDefinition Height="0.389*"/>
+                        <RowDefinition Height="45" MinHeight="35"/>
+                        <RowDefinition/>
+                        <!--<RowDefinition Height="0.389*"/>
                         <RowDefinition Height="0.147*"/>
-                        <RowDefinition Height="0.32*"/>
+                        <RowDefinition Height="0.32*"/>-->
                     </Grid.RowDefinitions>
-                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment, GridBox" Margin="12,0,0,-1"><TextBlock.Foreground>
+                    <!--<TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" d:LayoutOverrides="HorizontalAlignment, GridBox" Margin="12,0,0,-1"><TextBlock.Foreground>
         					<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
         				</TextBlock.Foreground><Run Text="ma"/><Run Text="ks"/><Run Text=" r"/><Run Text="entesats"/><Run Text=": "/></TextBlock>
-                    <TextBox TextWrapping="Wrap" TextChanged="MaxInteresteRateChanged" InputScope="Number" Text="{Binding MaxInterestRate, FallbackValue=3.5, Mode=TwoWay}" d:LayoutOverrides="Height, GridBox" Grid.Row="1" Margin="12,1,12,0" />
-                    <Grid Margin="0" Grid.Row="2" Height="27" VerticalAlignment="Top">
+                    <TextBox TextWrapping="Wrap" TextChanged="MaxInteresteRateChanged" InputScope="Number" Text="{Binding MaxInterestRate, FallbackValue=3.5, Mode=TwoWay}" d:LayoutOverrides="Height, GridBox" Grid.Row="1" Margin="12,1,12,0" />-->
+                    <Grid Margin="0" Grid.Row="0">
+                    	<Grid.RowDefinitions>
+                    		<RowDefinition Height="Auto" MinHeight="45"/>
+                    	</Grid.RowDefinitions>
                     	<Grid.ColumnDefinitions>
                     		<ColumnDefinition/>
                     	</Grid.ColumnDefinitions>
                     	<StackPanel Margin="12,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    		<TextBlock TextWrapping="Wrap" Text="valgt rente: " HorizontalAlignment="Left" VerticalAlignment="Top">
+                    		<TextBlock TextWrapping="Wrap" Text="velg rentesats: " HorizontalAlignment="Left" VerticalAlignment="Top">
                     			<TextBlock.Foreground>
                     				<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
                     			</TextBlock.Foreground>
                     		</TextBlock>
                     	</StackPanel>
-                    	<StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" Grid.Column="1">
-                    		<TextBlock TextWrapping="Wrap" Text="{Binding InterestRate, Converter={StaticResource DoubleTo2DecimalsStringConverter}}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,24,0" FontWeight="Bold">
+                    	<StackPanel HorizontalAlignment="Right" Margin="0" Grid.Column="1">
+                    		<TextBlock TextWrapping="Wrap" Text="{Binding InterestRate, Converter={StaticResource DoubleTo2DecimalsStringConverter}}" HorizontalAlignment="Right" Margin="0,0,24,0" FontWeight="Bold" FontSize="26.667" Padding="0">
                     			<TextBlock.Foreground>
                     				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
                     			</TextBlock.Foreground>
                     		</TextBlock>
                     	</StackPanel>
                     </Grid>
-                    <Slider Margin="12,0,12,-25" Minimum="0" Maximum="{Binding MaxInterestRate}" Value="{Binding InterestRate, FallbackValue=50, Mode=TwoWay}" d:LayoutOverrides="Width, Height" Grid.Row="3"/>
+                    <Slider Margin="12,-8,12,-25" Minimum="0" Maximum="15" Value="{Binding InterestRate, Mode=TwoWay}" d:LayoutOverrides="Width, Height, GridBox" Grid.Row="1"/>
                 </Grid>
             </StackPanel>
         	<StackPanel x:Name="PaymentPlanPanel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,-2" Grid.Row="3" Width="480">
@@ -165,20 +170,20 @@
         		</Grid>
         	</StackPanel>
         	<StackPanel x:Name="ResultPanel" Grid.Row="4" HorizontalAlignment="Left" Margin="0,2,0,0" Width="480">
-        		<Grid Margin="12,0">
+        		<Grid Margin="12,40,12,0">
         			<Grid.RowDefinitions>
         				<RowDefinition/>
         				<RowDefinition/>
         			</Grid.RowDefinitions>
         			<StackPanel>
-        				<TextBlock TextWrapping="Wrap" Text="beløp per måned:">
+        				<TextBlock TextWrapping="Wrap" Text="beløp å betale per måned:">
         					<TextBlock.Foreground>
         						<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
         					</TextBlock.Foreground>
         				</TextBlock>
         			</StackPanel>
         			<StackPanel Grid.Row="1" Margin="12,12,12,0" HorizontalAlignment="Center">
-        				<TextBlock TextWrapping="Wrap" Text="{Binding Interest, Converter={StaticResource DoubleTo2DecimalsStringConverter}}" FontSize="48" FontWeight="Bold">
+        				<TextBlock TextWrapping="Wrap" Text="{Binding Interest, Converter={StaticResource DoubleTo2DecimalsStringConverter}}" FontSize="96" Margin="0,20,0,0">
         					<TextBlock.Foreground>
         						<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
         					</TextBlock.Foreground>

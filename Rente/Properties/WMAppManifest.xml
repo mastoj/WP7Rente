@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{a177eb1f-d246-48c5-a864-64ca9dcbc1b3}" Title="Rente" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="Rente author" Description="Sample description" Publisher="Rente">
-    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{a177eb1f-d246-48c5-a864-64ca9dcbc1b3}" Title="Rentekalkulator" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="Tomas Jansson" Description="Interest calculator" Publisher="Tomas Jansson">
+    <IconPath IsRelative="true" IsResource="false">Graphics/Icon_173.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES"/>
       <Capability Name="ID_CAP_IDENTITY_DEVICE"/>
@@ -25,7 +25,7 @@
     <Tokens>
       <PrimaryToken TokenID="RenteToken" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Graphics/Icon_62.png</BackgroundImageURI>
           <Count>0</Count>
           <Title>Rente</Title>
         </TemplateType5>

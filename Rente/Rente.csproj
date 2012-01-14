@@ -17,8 +17,8 @@
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
-		nb-NO;    
-	</SupportedCultures>
+		nb-NO;
+    </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>Rente.xap</XapFilename>
@@ -63,6 +63,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\DoubleTo2DecimalsStringConverter.cs" />
     <Compile Include="Converters\DoubleToIntConverter.cs" />
@@ -97,7 +102,20 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Graphics\Icon_173.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Icon_62.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppResources.nb-NO.resx" />
+    <EmbeddedResource Include="AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
