@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 
-
 namespace Rente
 {
     public class MainViewModel : INotifyPropertyChanged

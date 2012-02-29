@@ -63,14 +63,14 @@
         					</TextBlock>
         				</StackPanel>
         				<StackPanel HorizontalAlignment="Right" Margin="0" Grid.Column="1">
-        					<TextBlock TextWrapping="Wrap" Text="{Binding Amount}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,24,0" FontSize="26.667" FontWeight="Bold">
+        					<TextBlock Name="AmountTextBlock" TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,24,0" FontSize="26.667" FontWeight="Bold">
         						<TextBlock.Foreground>
         							<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
         						</TextBlock.Foreground>
         					</TextBlock>
         				</StackPanel>
         			</Grid>
-        			<Slider d:LayoutOverrides="Height" Grid.Row="1" Margin="12,-1,12,-26" Maximum="10000000" SmallChange="10" LargeChange="100" Value="{Binding Amount, Mode=TwoWay}"/>
+        			<Slider Name="AmountSlider" ValueChanged="OnAmountChanged" d:LayoutOverrides="Height" Grid.Row="1" Margin="12,-1,12,-26" Maximum="10000000" SmallChange="10" LargeChange="100" />
         		</Grid>
         	</StackPanel>
             <StackPanel x:Name="InterestPanel" HorizontalAlignment="Left" Width="480" Margin="0" Grid.Row="2">
@@ -97,14 +97,14 @@
                     		</TextBlock>
                     	</StackPanel>
                     	<StackPanel HorizontalAlignment="Right" Margin="0" Grid.Column="1">
-                    		<TextBlock TextWrapping="Wrap" Text="{Binding InterestRate, Converter={StaticResource DoubleTo2DecimalsStringConverter}}" HorizontalAlignment="Right" Margin="0,0,24,0" FontWeight="Bold" FontSize="26.667" Padding="0">
+                    		<TextBlock Name="InterestRateTextBlock"  TextWrapping="Wrap" HorizontalAlignment="Right" Margin="0,0,24,0" FontWeight="Bold" FontSize="26.667" Padding="0">
                     			<TextBlock.Foreground>
                     				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
                     			</TextBlock.Foreground>
                     		</TextBlock>
                     	</StackPanel>
                     </Grid>
-                    <Slider Margin="12,-8,12,-25" Minimum="0" Maximum="15" Value="{Binding InterestRate, Mode=TwoWay}" d:LayoutOverrides="Width, Height, GridBox" Grid.Row="1"/>
+                    <Slider Name="InterestRateSlider" Margin="12,-8,12,-25" Minimum="0" Maximum="15" ValueChanged="InterestRateChanged" d:LayoutOverrides="Width, Height, GridBox" Grid.Row="1"/>
                 </Grid>
             </StackPanel>
         	
@@ -115,14 +115,14 @@
         				<RowDefinition/>
         			</Grid.RowDefinitions>
         			<StackPanel>
-        				<TextBlock TextWrapping="Wrap" Text="beløp å betale per måned:">
+        				<TextBlock Name="PrMonthTextBlock"  TextWrapping="Wrap" Text="beløp å betale per måned:">
         					<TextBlock.Foreground>
         						<SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
         					</TextBlock.Foreground>
         				</TextBlock>
         			</StackPanel>
         			<StackPanel Grid.Row="1" Margin="12,12,12,0" HorizontalAlignment="Center">
-        				<TextBlock TextWrapping="Wrap" Text="{Binding Interest, Converter={StaticResource DoubleTo2DecimalsStringConverter}}" FontSize="96" Margin="0,20,0,0">
+        				<TextBlock Name="InterestTextBlock" TextWrapping="Wrap" FontSize="96" Margin="0,20,0,0">
         					<TextBlock.Foreground>
         						<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
         					</TextBlock.Foreground>

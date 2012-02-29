@@ -1,30 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using Rente.Converters;
 
 namespace Rente
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        // Constructor
+        private InterestService _interestService;
+        private double _amount;
+        private double _interestRate;
+        private DoubleTo2DecimalsStringConverter _doubleToTwoDecimalsConverter;
+
         public MainPage()
         {
             InitializeComponent();
-
-            // Set the data context of the listbox control to the sample data
-            DataContext = App.ViewModel;
+            _amount = 100000;
+            _interestRate = 3.10;
+            _doubleToTwoDecimalsConverter = new DoubleTo2DecimalsStringConverter();
+            UpdateUI();
+        }
+        
+        private void InterestRateChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _interestRate = e.NewValue;
+            UpdateUI();
         }
 
+        private void OnAmountChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _amount = e.NewValue;
+            UpdateUI();
+        }
 
+        private void UpdateUI()
+        {
+            AmountTextBlock.Text = ConvertFromDoubleToString(_amount);
+            InterestRateTextBlock.Text = ConvertFromDoubleToString(_interestRate);
+            InterestTextBlock.Text = GetInterestText();
+        }
 
+        private string GetInterestText()
+        {
+            var interest = InterestService.CalcInterest(_interestRate, _amount);
+            var interestText = ConvertFromDoubleToString(interest);
+            return interestText;
+        }
+
+        private string ConvertFromDoubleToString(double interest)
+        {
+            return (string)_doubleToTwoDecimalsConverter.Convert(interest, typeof(string), null, CultureInfo.InvariantCulture);
+        }
+
+        private InterestService InterestService
+        {
+            get
+            {
+                if(_interestService == null)
+                {
+                    _interestService = new InterestService();
+                }
+                return _interestService;
+            }
+        }
     }
 }
