@@ -60,7 +60,7 @@ namespace Rente.ViewModel
                     return;
                 }
                 _amount = value;
-                MessengerInstance.Send(new CalculateInterest(_interestRate, Amount));
+                MessengerInstance.Send(new CalculateInterest(InterestRate, _amount));
                 RaisePropertyChanged(AmountPropertyName);
             }
         }
