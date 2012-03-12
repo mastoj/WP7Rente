@@ -23,6 +23,18 @@ namespace Rente
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
 
+        public static MainViewModel ViewModel
+        {
+            get {
+                if(_viewModel == null)
+                {
+                    _viewModel =  new MainViewModel();
+                }
+                return _viewModel;
+            }
+          
+        }
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -107,6 +119,7 @@ namespace Rente
 
         // Avoid double-initialization
         private bool phoneApplicationInitialized = false;
+        private static MainViewModel _viewModel;
 
         // Do not add any additional code to this method
         private void InitializePhoneApplication()
