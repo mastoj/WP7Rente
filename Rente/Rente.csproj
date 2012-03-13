@@ -71,11 +71,16 @@
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Converters\DoubleTo2DecimalsStringConverter.cs" />
     <Compile Include="Converters\DoubleToIntConverter.cs" />
+    <Compile Include="IoC\ViewModelLocator.cs" />
+    <Compile Include="IoC\TinyIoC.cs" />
+    <Compile Include="IoC\TinyMessenger.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IInterestService.cs" />
     <Compile Include="Services\InterestService.cs" />
+    <Compile Include="Services\InterestServiceStub.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,10 @@
         <Rente_Converters:DoubleToIntConverter x:Key="DoubleToIntConverter"/>
     </phone:PhoneApplicationPage.Resources>
 
+    <UserControl.DataContext>
+        <Binding Path="MainViewModel" Source="{StaticResource ViewModelLocator}" />
+    </UserControl.DataContext>
+
     <phone:PhoneApplicationPage.FontFamily>
         <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
     </phone:PhoneApplicationPage.FontFamily>

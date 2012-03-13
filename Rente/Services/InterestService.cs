@@ -1,6 +1,6 @@
 namespace Rente
 {
-    public class InterestService
+    public class InterestService : IInterestService
     {
         public double CalcInterest(double interestRate, double amount)
         {

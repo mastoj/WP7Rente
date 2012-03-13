@@ -15,7 +15,6 @@ namespace Rente
         public MainPage()
         {
             InitializeComponent();
-            DataContext = App.ViewModel;
         }
         
       
